@@ -8,7 +8,32 @@
     <title>Tip calculator</title>
 </head>
 <body>
-    <h1>Tip calculator</h1>
+    <div class="container">
+        <div class="grid-container">
+            <p class="title cuenta-label">Total de la cuenta</p>
+            <input type="number" min="0" class="field big-field cuenta"></input>
+
+            <p class="title propina-label">Propina</p>
+            <div class="field small-field propina"></div>
+            <input id="scale" type="range" name="scale" min="0" max="100" value="50" oninput="tipChange()"
+                onchange="tipChange()" class="slider">
+
+            <p class="title personas-label">Personas</p>
+            <input type="number" min="0" class="field small-field personas"></input>
+
+            <p class="title partes-label">¿Partes iguales?</p>
+            <input type="checkbox" id="_checkbox" class="partes"  onclick="partsChange()"></input>
+            <label id="check" for="_checkbox" class="partes">
+                <div id="tick_mark"></div>
+            </label>
+
+            <p class="title subtotal-label">Subtotal</p>
+            <div class="field big-field subtotal"></div>
+            
+            <p class="title total-label">Total a pagar</p>
+            <div class="field big-field total"></div>
+        </div>
+    </div>
     <script src="./tipCalculator.js"></script>
 </body>
 </html>
