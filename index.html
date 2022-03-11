@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./buttons.css">
     <title>Tip calculator</title>
 </head>
 <body>
@@ -14,7 +15,7 @@
             <input type="number" min="0" class="field big-field cuenta"></input>
 
             <p class="title propina-label">Propina</p>
-            <div class="field small-field propina"></div>
+            <p class="field small-field propina" id="propinaDisplay">%</p>
             <input id="scale" type="range" name="scale" min="0" max="100" value="50" oninput="tipChange()"
                 onchange="tipChange()" class="slider">
 
@@ -27,11 +28,15 @@
                 <div id="tick_mark"></div>
             </label>
 
-            <p class="title subtotal-label">Subtotal</p>
-            <div class="field big-field subtotal"></div>
+            <p class="title subtotal-label" id="Sub">Subtotal (sin propina) </p>
+            <input type="number" min="0" class="field big-field parcial"></input>
+            <p class="field big-field subtotal"></p>
+            
             
             <p class="title total-label">Total a pagar</p>
-            <div class="field big-field total"></div>
+            <p class="field big-field total"></p>
+
+            <button class="submit_button bubbly-button" onclick="calcular()">Calcular</button>
         </div>
     </div>
     <script src="./tipCalculator.js"></script>
