@@ -66,11 +66,11 @@ function calcular() {
         let factor = (1 + propinaPorcentual);
 
         total.textContent = todos_pagan==true?
-        '$ ' + (cuenta.value*factor)/personas.value:
-        '$ ' + (parseInt(parcial.value) + parseInt(((cuenta.value*propinaPorcentual)/personas.value)));
+        '$ ' + Math.round((cuenta.value*factor)/personas.value):
+        '$ ' + Math.round((parseInt(parcial.value) + parseInt(((cuenta.value*propinaPorcentual)/personas.value))));
 
         subtotal.textContent = todos_pagan==true?
-        '$ ' + cuenta.value/personas.value:
+        '$ ' + Math.round(cuenta.value/personas.value):
         '';
     }else{
         alert(errMessage);
